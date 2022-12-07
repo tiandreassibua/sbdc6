@@ -48,7 +48,7 @@
                                 <input type="submit" class="btn btn-block btn-success mt-3 text-start" value="Tambah" placeholder="Last name" aria-label="Last name">
                             </div>
                         </form> -->
-                        <table class="table table-bordered">
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">Golongan</th>

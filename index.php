@@ -42,6 +42,26 @@
                 </p>
             </div>
         </header>
+        <div class="row mt-5 justify-content-center align-items-center text-center">
+            <div class="col-lg-4">
+                <a href="pegawai.php">
+                    <img src="./img/male.png" class="img-responsive" width="150px" alt="pegawai">
+                </a>
+
+                <h2 class="fw-normal">Pegawai</h2>
+                <p>Menampilkan data-data pegawai</p>
+                <!-- <p><a class="btn btn-secondary" href="pegawai.php">Tambah Pegawai &raquo;</a></p> -->
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <a href="golongan.php">
+                    <img src="./img/golongan.png" class="img-responsive" width="150px" alt="golongan">
+                </a>
+
+                <h2 class="fw-normal">Golongan</h2>
+                <p>Berisi jabatan berdasarkan golongan pegawai.</p>
+                <!-- <p><a class="btn btn-secondary" href="pegawai.php">Tambah Pegawai &raquo;</a></p> -->
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
     </div>
 </body>
 

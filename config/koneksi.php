@@ -1,9 +1,9 @@
 <?php
 
-$user = 'b24_33150898';
-$pass = '8karakter';
-$host = 'sql202.byethost24.com';
-$db = 'b24_33150898_c6';
+$user = 'root';
+$pass = '';
+$host = 'localhost';
+$db = 'jenjang_karir';
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 

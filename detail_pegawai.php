@@ -73,7 +73,7 @@ if (mysqli_num_rows($query_cek) == 0) {
                 <a href="hapus_pegawai.php?nip=<?= $nip ?>" class="btn btn-danger mb-3" title="Hapus Pegawai">
                     <i class="fa fa-trash"></i>
                 </a>
-                <table class="table table-bordered table-responsive justify-content-center align-items-center text-center">
+                <table class="table table-hover table-responsive justify-content-center align-items-center text-center">
                     <tr>
                         <th>NIP</th>
                         <td><?= $ambil_pegawai['nip'] ?></td>
@@ -110,11 +110,11 @@ if (mysqli_num_rows($query_cek) == 0) {
                 <br>
                 <br>
                 <h3 class="fw-semibold text-center">Jenjang Karir</h3><br>
-                <a href="tambah_pegawai.php" class="btn btn-success mb-3" title="Tambah Jenjang Karir">
+                <a href="tambah_jenjang_karir.php?nip=<?= $nip ?>" class="btn btn-success mb-3" title="Tambah Jenjang Karir">
                     <i class="fa fa-circle-plus"></i>
                 </a>
                 <div class="table-responsive">
-                    <table class="table table-bordered text-center">
+                    <table class="table table-hover text-center">
                         <thead>
                             <tr>
                                 <th scope="col">NIP</th>
@@ -152,31 +152,41 @@ if (mysqli_num_rows($query_cek) == 0) {
                                         <th scope="row"><?= $kinerja['nip'] ?></th>
                                         <td><?= $kinerja['golongan'] ?></td>
                                         <td><?= $kinerja['jabatan'] ?></td>
-                                        <td><?php if ($kinerja['kedisiplinan'] == NULL) {
+                                        <td>
+                                            <?php if ($kinerja['kedisiplinan'] == NULL) {
                                                 echo "-";
                                             } else {
                                                 echo $kinerja['kedisiplinan'];
-                                            }  ?></td>
-                                        <td><?php if ($kinerja['tanggung_jawab'] == NULL) {
+                                            }  ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($kinerja['tanggung_jawab'] == NULL) {
                                                 echo "-";
                                             } else {
                                                 echo $kinerja['tanggung_jawab'];
-                                            }  ?></td>
-                                        <td><?php if ($kinerja['sikap'] == NULL) {
+                                            }  ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($kinerja['sikap'] == NULL) {
                                                 echo "-";
                                             } else {
                                                 echo $kinerja['sikap'];
-                                            }  ?></td>
-                                        <td><?php if ($kinerja['kompetensi'] == NULL) {
+                                            }  ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($kinerja['kompetensi'] == NULL) {
                                                 echo "-";
                                             } else {
-                                                echo $kinerja['sikap'];
-                                            }  ?></td>
-                                        <td><?php if ($kinerja['total_poin'] == NULL) {
+                                                echo $kinerja['kompetensi'];
+                                            }  ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($kinerja['total_poin'] == NULL) {
                                                 echo "-";
                                             } else {
                                                 echo $kinerja['total_poin'];
-                                            }  ?></td>
+                                            }  ?>
+                                        </td>
                                         <td><?= $kinerja['tanggal_berlaku'] ?></td>
                                     </tr>
                                 <?php }
