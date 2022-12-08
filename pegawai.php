@@ -34,7 +34,7 @@
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto">
-                <h3 class="fw-normal text-center">Data Pegawai</h3><br>
+                <h3 class="fw-semibold text-center">Data Pegawai</h3><br>
                 <a href="tambah_pegawai.php" class="btn btn-success mb-3"><i class="fa fa-plus"></i> Tambah Pegawai</a>
                 <div class="table-responsive">
                     <table class="table table-hover text-center">

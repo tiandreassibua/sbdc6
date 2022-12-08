@@ -34,7 +34,7 @@
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                <h1 class="display-4 fw-normal">Selamat Datang</h1>
+                <h1 class="display-4 fw-semibold">Selamat Datang</h1>
                 <p class="fs-5 text-muted">
                     Universitas Kristen Duta Wacana didirikan pada tahun 1985 sebagai pengembangan dari Sekolah Tinggi Theologia Duta Wacana. Sekolah Tinggi Theologia Duta Wacana didirikan pada tahun 1962 sebagai penggabungan
                     dari Akademi Theologia Jogjakarta dan Sekolah Theologia

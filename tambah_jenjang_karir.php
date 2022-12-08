@@ -46,7 +46,7 @@ if (mysqli_num_rows($query_cek) == 0) {
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto">
-                <h3 class="fw-normal text-center">Tambah Jenjang Karir</h3><br>
+                <h3 class="fw-semibold text-center">Tambah Jenjang Karir</h3><br>
 
                 <form method="post" class="row g-3">
                     <div class="col-md-2">

@@ -37,7 +37,7 @@
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto">
-                <h3 class="fw-normal text-center">Tambah Pegawai</h3><br>
+                <h3 class="fw-semibold text-center">Tambah Pegawai</h3><br>
 
                 <?php $randInt = rand(11111111, 99999999); ?>
                 <form method="post" class="row g-3">

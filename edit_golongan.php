@@ -48,7 +48,7 @@ if (mysqli_num_rows($query_cek) == 0) {
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto">
-                <h3 class="fw-normal mb-5 text-center">Edit Data Golongan</h3>
+                <h3 class="fw-semibold mb-5 text-center">Edit Data Golongan</h3>
 
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-6">

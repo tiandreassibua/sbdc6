@@ -35,7 +35,7 @@
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto">
-                <h3 class="fw-normal mb-5 text-center">Data Golongan</h3>
+                <h3 class="fw-semibold mb-5 text-center">Data Golongan</h3>
                 <div class="modal fade" id="tambahGolongan" tabindex="-1" aria-labelledby="tambahGolonganLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
