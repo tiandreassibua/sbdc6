@@ -52,7 +52,7 @@
                             <?php
 
                             include "./config/koneksi.php";
-                            $sql = "select * from pegawai order by nip asc";
+                            $sql = "select * from pegawai order by createdAt desc";
                             $query = mysqli_query($conn, $sql);
                             while ($data = mysqli_fetch_array($query)) {
 

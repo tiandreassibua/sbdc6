@@ -51,19 +51,19 @@ if (mysqli_num_rows($query_cek) == 0) {
                 <form method="post" class="row g-3">
                     <div class="col-md-2">
                         <label for="inputEmail4" class="form-label">Kedisiplinan</label>
-                        <input type="number" name="kedisiplinan" class="form-control" id="inputEmail4" required>
+                        <input type="number" name="kedisiplinan" class="form-control" id="inputEmail4" min="0" max="5" required>
                     </div>
                     <div class="col-md-2">
                         <label for="inputEmail4" class="form-label">Tanggung Jawab</label>
-                        <input type="number" name="tanggung_jawab" class="form-control" id="inputEmail4" required>
+                        <input type="number" name="tanggung_jawab" class="form-control" id="inputEmail4" min="0" max="5" required>
                     </div>
                     <div class="col-md-2">
                         <label for="inputEmail4" class="form-label">Sikap</label>
-                        <input type="number" name="sikap" class="form-control" id="inputEmail4" required>
+                        <input type="number" name="sikap" class="form-control" id="inputEmail4" min="0" max="5" required>
                     </div>
                     <div class="col-md-2">
                         <label for="inputEmail4" class="form-label">Kompetensi</label>
-                        <input type="number" name="kompetensi" class="form-control" id="inputEmail4" required>
+                        <input type="number" name="kompetensi" class="form-control" id="inputEmail4" min="0" max="5" required>
                     </div>
                     <div class="col-md-2">
                         <label for="inputState" class="form-label">Golongan</label>
@@ -72,13 +72,24 @@ if (mysqli_num_rows($query_cek) == 0) {
                             <?php
                             include "./config/koneksi.php";
 
+                            // $query = mysqli_query($conn, "SELECT LEFT(golongan, 1) FROM kinerja WHERE nip = '$nip' ORDER BY tanggal_berlaku DESC LIMIT 1");
+                            $query = mysqli_query($conn, "SELECT * FROM kinerja WHERE nip = '$nip' ORDER BY tanggal_berlaku DESC LIMIT 1");
+                            $gol_user = mysqli_fetch_array($query);
+
                             $q_golongan = mysqli_query($conn, "SELECT * FROM golongan ORDER BY golongan ASC");
+
+
+
                             while ($golongan = mysqli_fetch_array($q_golongan)) {
+                                if ( $golongan['golongan'][0] == $gol_user['golongan'][0]) {
+                                    // continue;
+                                    // }
                             ?>
-                                <option value="<?= $golongan['golongan'] ?>">
-                                    <?= $golongan['golongan'] ?> - <i><?= $golongan['jabatan'] ?></i>
-                                </option>
-                            <?php } ?>
+                                    <option value="<?= $golongan['golongan'] ?>" class="<?php if ($golongan['golongan'] == $gol_user['golongan']) echo "fw-semibold"; ?>">
+                                        <?= $golongan['golongan'] ?> - <?= $golongan['jabatan'] ?> <?php if ($golongan['golongan'] == $gol_user['golongan']) echo "(saat ini)"; ?>
+                                    </option>
+                            <?php }
+                            } ?>
                         </select>
                     </div>
                     <div class="col-md-2">
@@ -107,8 +118,10 @@ if (mysqli_num_rows($query_cek) == 0) {
                         "insert into kinerja(nip, golongan, kedisiplinan, tanggung_jawab, sikap, kompetensi, total_poin)
                         values('$nip','$gol','$dis', '$tj','$sikap','$kom','$total_poin')"
                     );
-
-                    if ($query) {
+                    
+                    if($gol == $gol_user['golongan']){
+                        echo "<script>alert('Golongan tidak boleh sama dengan golongan sebelumnya!')</script>";
+                    }else if ($query) {
                         echo "<script>alert('Jenjang karir pegawai berhasil disimpan!')</script>";
                         echo "<script>window.location='detail_pegawai.php?nip=$nip'</script>";
                     } else {

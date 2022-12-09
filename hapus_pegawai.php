@@ -6,8 +6,8 @@ if (mysqli_num_rows($query_cek) == 0) {
     header('location:pegawai.php');
 }
 
-$hapus = mysqli_query($conn, "DELETE FROM peagawai WHERE nip = '$nip'");
+$hapus = mysqli_query($conn, "DELETE FROM pegawai WHERE nip = '$nip'");
 if ($hapus) {
     echo "<script>alert('Data pegawai berhasil dihapus!')</script>";
-    echo "<script>window.location='nip.php'</script>";
+    echo "<script>window.location='pegawai.php'</script>";
 }
