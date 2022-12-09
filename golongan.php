@@ -93,7 +93,7 @@
                                 <tr>
                                     <th scope="col">Golongan</th>
                                     <th scope="col">Jabatan</th>
-                                    <th scope="col">Opsi</th>
+                                    <!-- <th scope="col">Opsi</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -106,14 +106,14 @@
                                     <tr>
                                         <td><?= $data['golongan'] ?></td>
                                         <td><?= $data['jabatan'] ?></td>
-                                        <td>
+                                        <!-- <td>
                                             <a href="hapus_golongan.php?golongan=<?= $data['golongan'] ?>" class="btn btn-sm btn-outline-danger">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                             <a href="edit_golongan.php?golongan=<?= $data['golongan'] ?>" class="btn btn-sm btn-outline-info">
                                                 <i class="fa fa-pen-to-square"></i>
                                             </a>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 <?php } ?>
                             </tbody>
