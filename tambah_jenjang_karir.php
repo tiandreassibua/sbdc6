@@ -118,8 +118,11 @@ if (mysqli_num_rows($query_cek) == 0) {
                         "insert into kinerja(nip, golongan, kedisiplinan, tanggung_jawab, sikap, kompetensi, total_poin)
                         values('$nip','$gol','$dis', '$tj','$sikap','$kom','$total_poin')"
                     );
+
+                    $q_validasi = mysqli_query($conn, "SELECT * FROM kinerja WHERE golongan = '$gol' AND nip = '$nip'");
+                    $validasi = mysqli_fetch_array($q_validasi);
                     
-                    if($gol == $gol_user['golongan']){
+                    if($validasi){
                         echo "<script>alert('Golongan tidak boleh sama dengan golongan sebelumnya!')</script>";
                     }else if ($query) {
                         echo "<script>alert('Jenjang karir pegawai berhasil disimpan!')</script>";

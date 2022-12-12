@@ -100,7 +100,7 @@
                     $jk = $_POST['jenis_kelamin'];
                     $golongan = $_POST['golongan'];
 
-                    $q_pegawai = mysqli_query($conn, "INSERT INTO pegawai VALUES('$nip','$nama','$telp','$jk','$alamat')");
+                    $q_pegawai = mysqli_query($conn, "INSERT INTO pegawai (nip, nama_lengkap, telepon, jenis_kelamin, alamat) VALUES('$nip','$nama','$telp','$jk','$alamat')");
                     $q_kinerja = mysqli_query($conn, "INSERT INTO kinerja (nip, golongan) VALUES('$nip','$golongan')");
 
                     if ($q_pegawai && $q_kinerja) {
