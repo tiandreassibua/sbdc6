@@ -72,7 +72,6 @@ if (mysqli_num_rows($query_cek) == 0) {
                             <?php
                             include "./config/koneksi.php";
 
-                            // $query = mysqli_query($conn, "SELECT LEFT(golongan, 1) FROM kinerja WHERE nip = '$nip' ORDER BY tanggal_berlaku DESC LIMIT 1");
                             $query = mysqli_query($conn, "SELECT * FROM kinerja WHERE nip = '$nip' ORDER BY tanggal_berlaku DESC LIMIT 1");
                             $gol_user = mysqli_fetch_array($query);
 
@@ -82,8 +81,6 @@ if (mysqli_num_rows($query_cek) == 0) {
 
                             while ($golongan = mysqli_fetch_array($q_golongan)) {
                                 if ( $golongan['golongan'][0] == $gol_user['golongan'][0]) {
-                                    // continue;
-                                    // }
                             ?>
                                     <option value="<?= $golongan['golongan'] ?>" class="<?php if ($golongan['golongan'] == $gol_user['golongan']) echo "fw-semibold"; ?>">
                                         <?= $golongan['golongan'] ?> - <?= $golongan['jabatan'] ?> <?php if ($golongan['golongan'] == $gol_user['golongan']) echo "(saat ini)"; ?>
@@ -115,20 +112,15 @@ if (mysqli_num_rows($query_cek) == 0) {
 
                     $query = mysqli_query(
                         $conn,
-                        "insert into kinerja(nip, golongan, kedisiplinan, tanggung_jawab, sikap, kompetensi, total_poin)
+                        "INSERT INTO kinerja(nip, golongan, kedisiplinan, tanggung_jawab, sikap, kompetensi, total_poin)
                         values('$nip','$gol','$dis', '$tj','$sikap','$kom','$total_poin')"
                     );
 
-                    $q_validasi = mysqli_query($conn, "SELECT * FROM kinerja WHERE golongan = '$gol' AND nip = '$nip'");
-                    $validasi = mysqli_fetch_array($q_validasi);
-                    
-                    if($validasi){
-                        echo "<script>alert('Golongan tidak boleh sama dengan golongan sebelumnya!')</script>";
-                    }else if ($query) {
+                    if ($query) {
                         echo "<script>alert('Jenjang karir pegawai berhasil disimpan!')</script>";
                         echo "<script>window.location='detail_pegawai.php?nip=$nip'</script>";
                     } else {
-                        echo "<script>alert('gagal')</script>";
+                        echo "<script>alert('Golongan tidak boleh sama dengan golongan sebelumnya!')</script>";
                     }
                 }
 
